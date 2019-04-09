@@ -1,0 +1,38 @@
+$hero-size: 60vh;
+
+.hero {
+  position: relative;
+  max-height: $hero-size;
+  margin-top: $gutter * 10;
+  height: $hero-size;
+  background: theme-color("special_dark");
+  display: flex;
+  align-items: center;
+  color: map-get($theme-colors, "light");
+  text-align: center;
+  text-transform: uppercase;
+  overflow: hidden;
+
+  &__content {
+    position: relative;
+    z-index: 10;
+    max-width: $gutter * 110;
+  }
+
+  &__img {
+    position: absolute;
+    padding: 0;
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center center;
+    height: 1000px;
+    max-height: 100%;
+    opacity: 0.6;
+  }
+}
+
+.page-template-page-content .hero p {
+  display: none;
+}
