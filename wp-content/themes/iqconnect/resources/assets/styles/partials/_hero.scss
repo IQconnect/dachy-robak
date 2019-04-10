@@ -1,3 +1,27 @@
 .hero {
-  @include cssLock("padding-top", 360, 1440, (($gutter * 10) ($gutter * 20)));
+  margin-top: $gutter * 12;
+
+  @include cssLock(
+    "padding-top",
+    360,
+    1440,
+    (($gutter-num * 10) ($gutter-num * 20))
+  );
+  @include cssLock(
+    "padding-bottom",
+    360,
+    1440,
+    (($gutter-num * 10) ($gutter-num * 20))
+  );
+
+  color: theme-color(light);
+
+  &__subtitle {
+    @include cssLock(
+      "margin-bottom",
+      360,
+      1440,
+      (($gutter-num * 5) ($gutter-num * 10))
+    );
+  }
 }

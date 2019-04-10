@@ -13,7 +13,8 @@
   }
 
   &__item {
-    margin: 0 ($gutter * 2);
+    @include cssLock("margin-left", 360, 1440, (($gutter-num * 0.5) ($gutter-num * 2)));
+    @include cssLock("margin-right", 360, 1440, ($gutter-num ($gutter-num * 2)));
 
     /** Wordpress current menu item style */
     &.current-menu-item {

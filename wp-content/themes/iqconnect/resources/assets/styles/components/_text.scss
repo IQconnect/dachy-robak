@@ -8,9 +8,14 @@
   font-family: map-get($font-family, "title"), sans-serif;
   margin-bottom: 0;
   display: block;
+  line-height: 1.5;
 }
 
 .headline {
+  @extend .heading;
+
+  @include cssLock("font-size", 360, 1440, (($gutter-num * 2) ($gutter-num * 7)));
+
   font-weight: 600;
   letter-spacing: $gutter * 0.2;
 }
@@ -33,14 +38,26 @@ blockquote,
   font-style: italic;
 }
 
-strong,
-b,
 .large-body {
   line-height: 2;
 }
 
+strong,
+b,
+.bold {
+  font-size: inherit;
+  font-weight: 600;
+}
+
+strong,
+b {
+  color: theme-color("special");
+}
+
 p,
 .body {
+  @include cssLock("font-size", 360, 1440, ($gutter-num ($gutter-num * 2)));
+
   line-height: 2;
 }
 
@@ -54,7 +71,7 @@ p,
 }
 
 .link {
-  @include cssLock("font-size", 360, 1440, (10 16));
+  @include cssLock("font-size", 768, 1440, ($gutter-num ($gutter-num * 2)));
 
   font-weight: 600;
   transition: $transition;
