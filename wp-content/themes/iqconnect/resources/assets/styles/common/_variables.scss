@@ -4,10 +4,10 @@
 $theme-colors: (
   light: #fff,
   dark: #000,
-  greyy: #e5e9eb,
-  special: #003681,
-  special_dark: #162e5e,
-  special-extra: #2c8bc6
+  greyy: #bdc3cf,
+  special: #fc4901,
+  special_dark: #03192b,
+  special_light: #0a3460
 );
 
 $media: (
@@ -20,47 +20,12 @@ $media: (
 
 $transition: 0.4s;
 
-$font-size: (
-  headline: (
-    56pt,
-    20pt
-  ),
-  title: (
-    24pt,
-    20pt
-  ),
-  subheader: (
-    14pt,
-    14pt
-  ),
-  quote: (
-    20pt,
-    14pt
-  ),
-  body: (
-    12.5pt,
-    12.5pt
-  ),
-  secondary-body: (
-    9pt,
-    9pt
-  ),
-  placeholder: (
-    12pt,
-    10pt
-  ),
-  button: (
-    10pt,
-    10pt
-  )
-);
-
 $font-family: (
-  main: "Arial",
-  title: "Open Sans"
+  main: "Nunito",
+  title: "Roboto"
 );
 
-$gutter: 10px;
+$gutter: 8px;
 
 /** Bootstrap navbar fix (https://git.io/fADqW) */
 $navbar-dark-toggler-icon-bg: none;

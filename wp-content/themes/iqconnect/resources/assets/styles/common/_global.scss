@@ -3,6 +3,7 @@ body {
   font-family: map-get($font-family, "main"), sans-serif;
   overflow-x: initial;
   margin-top: 0 !important;
+  background-color: theme-color("special_dark");
 }
 
 #wpadminbar {

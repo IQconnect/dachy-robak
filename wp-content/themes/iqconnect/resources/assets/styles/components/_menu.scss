@@ -1,0 +1,30 @@
+.menu {
+  $root: &;
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  color: theme-color("dark");
+
+  @include media(sm) {
+    flex-direction: row;
+  }
+
+  &__item {
+    margin: 0 ($gutter * 2);
+
+    /** Wordpress current menu item style */
+    &.current-menu-item {
+      #{$root}__elem {
+        text-decoration: underline;
+        color: theme-color("special");
+      }
+    }
+  }
+
+  &__elem {
+    padding: 0 $gutter;
+  }
+}

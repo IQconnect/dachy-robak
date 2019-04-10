@@ -1,0 +1,3 @@
+.hero {
+  @include cssLock("padding-top", 360, 1440, (($gutter * 10) ($gutter * 20)));
+}

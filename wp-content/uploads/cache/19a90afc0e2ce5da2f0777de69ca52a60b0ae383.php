@@ -19,7 +19,7 @@
         </button>
         <nav class="header__nav" data-nav>
           <?php if(has_nav_menu('primary_navigation')): ?>
-            <?php echo wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'header__menu']); ?>
+            <?php echo wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'menu', 'walker' => new Description_Walker()]);; ?>
 
           <?php endif; ?>
         </nav>
