@@ -1,0 +1,13 @@
+.brands {
+  @include cssLock(
+    "grid-gap",
+    360,
+    1440,
+    (($gutter-num * 1.25) ($gutter-num * 2.5))
+  );
+
+  list-style: none;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}

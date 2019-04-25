@@ -1,0 +1,25 @@
+.gallery {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: 100%;
+  position: relative;
+
+  li {
+    width: calc(100% / 3);
+    padding: 30px;
+  }
+
+  a {
+    display: block;
+  }
+
+  img {
+    @extend %image;
+
+    height: auto;
+  }
+}

@@ -5,18 +5,18 @@
     <div class="preloader" preloader ></div>
     <?php do_action('get_header') ?>
     <?php echo $__env->make('partials.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-    <div class="wrap" role="document">
-      <div class="content">
-        <main class="main">
+    <?php echo $__env->make('partials.hero', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php echo $__env->make('partials.background', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <main class="wrapper" id="wrapper">
+      <div class="container">
+        <div class="wrapper__content col">
           <?php echo $__env->yieldContent('content'); ?>
-        </main>
-        <?php if(App\display_sidebar()): ?>
-          <aside class="sidebar">
-            <?php echo $__env->make('partials.sidebar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-          </aside>
-        <?php endif; ?>
+
+          
+          <?php echo $__env->make('partials.partners', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        </div>
       </div>
-    </div>
+    </main>
     <?php do_action('get_footer') ?>
     <?php echo $__env->make('partials.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
     <?php wp_footer() ?>

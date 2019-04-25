@@ -1,5 +1,7 @@
 .hero {
   margin-top: $gutter * 12;
+  z-index: 100;
+  position: relative;
 
   @include cssLock(
     "padding-top",
@@ -14,7 +16,7 @@
     (($gutter-num * 10) ($gutter-num * 20))
   );
 
-  color: theme-color(light);
+  color: theme-color(special_dark);
 
   &__subtitle {
     @include cssLock(
@@ -23,5 +25,9 @@
       1440,
       (($gutter-num * 5) ($gutter-num * 10))
     );
+
+    p {
+      @include cssLock("font-size", 360, 1440, (($gutter-num * 1.25) ($gutter-num * 2.5)));
+    }
   }
 }

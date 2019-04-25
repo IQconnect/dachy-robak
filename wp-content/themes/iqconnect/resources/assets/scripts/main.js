@@ -17,6 +17,8 @@ import rotator from './components/rotator';
 import wp_block_gallery from './components/wp-block-gallery';
 import wp_block_files from './components/wp-block-files';
 import menu_control_mobile from './components/menu-control-moibile.js';
+require('./components/fancybox');
+
 
 
 /** Populate Router instance with DOM routes */
@@ -29,6 +31,7 @@ const routes = new Router({
   aboutUs,
 });
 
+
 // Load Events
 jQuery(document).ready(() => {
   routes.loadEvents();
@@ -38,18 +41,6 @@ jQuery(document).ready(() => {
   wp_block_gallery.init();
   wp_block_files.init();
   menu_control_mobile.init();
-
-  jQuery('[form]').on('submit', function (e) {
-    e.preventDefault();
-    jQuery.ajax({
-      type: 'post',
-      url: 'mail.php',
-      data: jQuery('[form]').serialize(),
-      success: function () {
-        alert('Wiadomość została wysłana!');
-      },
-    });
-  });
 });
 
 jQuery(window).load(()=> {

@@ -1,0 +1,18 @@
+.background {
+  @extend %absolute;
+  @extend %overlay;
+
+  width: 100%;
+  z-index: 0;
+  position: fixed;
+  overflow: hidden;
+
+  &::after {
+    opacity: 0.3;
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}

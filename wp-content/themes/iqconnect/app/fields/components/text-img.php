@@ -9,15 +9,15 @@ $config = (object) [
     'wrapper' => ['width' => 30],
 ];
 
-$textImg = new FieldsBuilder('textImg');
+$textImg = new FieldsBuilder('img-text-section');
 
 $textImg
-    ->addRadio('pozycja', ['label' => 'Z której strony zdjęcie?',  'wrapper' => ['width' => '20%']])
-        ->addChoices('lewo', 'prawo')
     ->addImage('image',['label' => 'Zdjęcie', 'wrapper' => ['width' => '80%']])
-    ->addText('title', ['label' => 'Tytuł'])
-    ->addText('suptitle', ['label' => 'Suptytuł'])
+    ->addText('movie',['label' => 'Film', 'instructions' => 'Link do filmu z yt'])
+    ->addTextArea('title', ['label' => 'Tytuł', 'rows'=>'2', 'new_lines' => 'br'])
     ->addWysiwyg('content', ['label' => 'Treść', 'media_upload' => 0])
-    ->addText('button', ['label' => 'Treść przycisku'])
-    ->addPageLink('button_link', ['label' => 'Odnośnik']);
+    ->addLink('button_link', ['label' => 'Odnośnik'])
+    ->addRepeater('labels')
+        ->addText('content',['label' => 'Content'])
+        ->addTextArea('title', ['label' => 'Tytuł', 'rows'=>'2', 'new_lines' => 'br']);
 return $textImg;

@@ -9,6 +9,7 @@
   left: 0;
   z-index: map-get($z-index, "header");
   transition: $transition;
+  box-shadow: 0 5px 12px #00000038;
 
   @include media(md) {
     color: theme-color("special");

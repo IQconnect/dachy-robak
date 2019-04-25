@@ -10,7 +10,7 @@ $post
     ->setLocation('post_type', '==', 'post')
         ->or('page_template', '==', 'views/page-content.blade.php')
         ->or('post_type', '==', 'oferty_inwestycyjne')
-        ->or('post_type', '==', 'partnerzy');
+        ->or('post_type', '==', 'realizations');
   
 $post
     ->addTab('header', ['placement' => 'left'])

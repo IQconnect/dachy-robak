@@ -12,9 +12,7 @@ $config = (object) [
 $hero = new FieldsBuilder('Hero');
 
 $hero
-    ->addImage('image')
-        ->setInstructions('Wybierz zdjęcie w tle')
-    ->addFile('film')
-    ->addText('title', ['label'=> 'Własny tytuł']);
+    ->addWysiwyg('subtitle', ['label'=> 'Tekst nad tytułem','toolbar'=>'basic','tabs' => 'visual', 'media_upload' => 0])
+    ->addTextArea('title', ['label'=> 'Tytuł', 'rows'=>'3','new_lines' => 'br']);
 
 return $hero;

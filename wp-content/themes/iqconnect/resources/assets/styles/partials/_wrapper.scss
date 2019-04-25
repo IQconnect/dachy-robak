@@ -1,0 +1,35 @@
+.wrapper {
+  z-index: 100;
+  position: relative;
+
+  &::before {
+    @extend %absolute;
+
+    content: "";
+    background: theme-color(light);
+    top: 100px;
+  }
+
+  &__content {
+    @include cssLock(
+      "padding-top",
+      360,
+      1440,
+      (($gutter-num * 5) ($gutter-num * 10))
+    );
+    @include cssLock(
+      "padding-bottom",
+      360,
+      1440,
+      (($gutter-num * 5) ($gutter-num * 10))
+    );
+    @include cssLock(
+      "margin-bottom",
+      360,
+      1440,
+      (($gutter-num * 5) ($gutter-num * 10))
+    );
+
+    background-color: theme-color("special_light");
+  }
+}

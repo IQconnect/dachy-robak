@@ -58,7 +58,7 @@ array_map(function ($file) use ($sage_error) {
     if (!locate_template($file, true, true)) {
         $sage_error(sprintf(__('Error locating <code>%s</code> for inclusion.', 'sage'), $file), 'File not found');
     }
-}, ['helpers', 'setup', 'filters', 'admin', 'customWalker']);
+}, ['helpers', 'setup', 'filters', 'admin', 'customWalker', 'phone_number']);
 
 /**
  * Here's what's happening with these hooks:
@@ -240,3 +240,5 @@ function the_breadcrumb() {
 @ini_set( 'upload_max_size' , '64M' );
 @ini_set( 'post_max_size', '64M');
 @ini_set( 'max_execution_time', '300' );
+
+remove_filter ('acf_the_content', 'wpautop');

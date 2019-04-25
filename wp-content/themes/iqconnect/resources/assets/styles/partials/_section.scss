@@ -1,0 +1,168 @@
+.section {
+  $root: &;
+
+  @include cssLock(
+    "margin-bottom",
+    360,
+    1440,
+    (($gutter-num * 5) ($gutter-num * 10))
+  );
+
+  &--center {
+    text-align: center;
+
+    p {
+      margin: 0 auto;
+    }
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &__wrapper {
+    &--space {
+      @include cssLock(
+        "padding-left",
+        360,
+        1440,
+        (($gutter-num * 5) ($gutter-num * 10))
+      );
+      @include cssLock(
+        "padding-right",
+        360,
+        1440,
+        (($gutter-num * 5) ($gutter-num * 10))
+      );
+    }
+  }
+
+  &__col {
+    padding: 0;
+  }
+
+  &__header {
+    @include cssLock(
+      "margin-bottom",
+      360,
+      1440,
+      (($gutter-num * 2.5) ($gutter-num * 5))
+    );
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    #{$root}__title {
+      margin-bottom: 0;
+    }
+  }
+
+  &__image {
+    @extend %absolute;
+    @extend %image;
+    @extend %overlay;
+
+    display: block;
+    overflow: hidden;
+
+    img {
+      @extend %image;
+
+      will-change: transform;
+      transition: $transition;
+    }
+
+    svg {
+      @extend %absolute;
+
+      transition: $transition;
+      z-index: 200;
+    }
+
+    &:hover {
+      img {
+        transform: scale(1.2);
+      }
+
+      svg {
+        transform: scale(0.8);
+      }
+    }
+  }
+
+  &__content {
+    @include media(sm) {
+      @include cssLock(
+        "padding-left",
+        360,
+        1440,
+        (($gutter-num * 5) ($gutter-num * 10))
+      );
+    }
+
+    p {
+      @include cssLock(
+        "margin-bottom",
+        360,
+        1440,
+        (($gutter-num * 1.25) ($gutter-num * 2.5))
+      );
+
+      color: theme-color("greyy");
+
+      &:first-child {
+        color: theme-color("light");
+        font-weight: 600;
+      }
+    }
+  }
+
+  &__title {
+    @include cssLock(
+      "margin-bottom",
+      360,
+      1440,
+      (($gutter-num * 2.5) ($gutter-num * 5))
+    );
+
+    position: relative;
+    padding-left: $gutter * 4;
+
+    &::before {
+      @extend %absolute;
+
+      content: "";
+      right: unset;
+      height: 100%;
+      width: $gutter * 0.5;
+      background-color: theme-color("special");
+    }
+  }
+
+  &__list {
+    @include cssLock(
+      "margin-top",
+      360,
+      1440,
+      (($gutter-num * 2.5) ($gutter-num * 5))
+    );
+
+    padding: 0;
+    display: flex;
+    list-style: none;
+  }
+
+  &__list-elem {
+    @include cssLock(
+      "margin-right",
+      360,
+      1440,
+      (($gutter-num * 5) ($gutter-num * 10))
+    );
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

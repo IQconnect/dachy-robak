@@ -1,0 +1,20 @@
+.offer {
+  @include cssLock(
+    "grid-gap",
+    360,
+    1440,
+    (($gutter-num * 1.25) ($gutter-num * 2.5))
+  );
+
+  display: grid;
+  grid-template-columns: 1fr;
+  list-style: none;
+
+  @include media(xs) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include media(lg) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

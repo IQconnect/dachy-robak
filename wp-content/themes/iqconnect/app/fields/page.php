@@ -11,5 +11,6 @@ $page
         ->and('page_template', '!=', 'views/page-content.blade.php');
   
 $page
+    ->addFields(get_field_partial('partials.header'))
     ->addFields(get_field_partial('partials.builder'));
 return $page;

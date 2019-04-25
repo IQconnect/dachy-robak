@@ -1,4 +1,8 @@
+/** Vendors */
 @import "vendors/scss-lock/css-lock";
+@import "vendors/fancybox";
+
+/** Common */
 @import "common/variables";
 @import "common/mixins";
 @import "common/functions";
@@ -22,9 +26,24 @@
 @import "components/text";
 @import "components/menu";
 @import "components/container";
+@import "components/block";
+@import "components/image-block";
+@import "components/brand";
+@import "components/background";
 
 /** Partials */
 @import "partials/header";
 @import "partials/hero";
+@import "partials/wrapper";
+@import "partials/section";
+@import "partials/offer";
+@import "partials/realization";
+@import "partials/refs";
+@import "partials/brands";
+@import "partials/contact";
+@import "partials/footer";
+@import "partials/gallery";
 
 /** Pages */
+@import "pages/archive";
+@import "pages/galeria";

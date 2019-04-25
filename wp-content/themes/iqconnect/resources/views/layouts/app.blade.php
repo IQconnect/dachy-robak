@@ -5,18 +5,18 @@
     <div class="preloader" preloader ></div>
     @php do_action('get_header') @endphp
     @include('partials.header')
-    <div class="wrap" role="document">
-      <div class="content">
-        <main class="main">
+    @include('partials.hero')
+    @include('partials.background')
+    <main class="wrapper" id="wrapper">
+      <div class="container">
+        <div class="wrapper__content col">
           @yield('content')
-        </main>
-        @if (App\display_sidebar())
-          <aside class="sidebar">
-            @include('partials.sidebar')
-          </aside>
-        @endif
+
+          {{-- Work Togather --}}
+          @include('partials.partners')
+        </div>
       </div>
-    </div>
+    </main>
     @php do_action('get_footer') @endphp
     @include('partials.footer')
     @php wp_footer() @endphp

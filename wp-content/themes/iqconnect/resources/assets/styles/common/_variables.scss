@@ -7,7 +7,8 @@ $theme-colors: (
   greyy: #bdc3cf,
   special: #fc4901,
   special_dark: #03192b,
-  special_light: #0a3460
+  special_light: #0a3460,
+  special_extra: #51a6ff
 );
 
 $media: (
@@ -33,7 +34,7 @@ $navbar-dark-toggler-icon-bg: none;
 $navbar-light-toggler-icon-bg: none;
 
 $z-index: (
-  infobar: 200,
-  header: 100,
-  preloader: 300
+  infobar: 300,
+  header: 300,
+  preloader: 400
 );

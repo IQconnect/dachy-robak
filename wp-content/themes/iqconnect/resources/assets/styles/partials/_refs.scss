@@ -1,0 +1,81 @@
+.refs {
+  $root: &;
+
+  @include cssLock(
+    "grid-gap",
+    360,
+    1440,
+    (($gutter-num * 5) ($gutter-num * 10))
+  );
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50vh 50vh;
+  list-style: none;
+
+  @include media(md) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 50vh;
+  }
+
+  img {
+    @include cssLock(
+      "width",
+      360,
+      1440,
+      (($gutter-num * 5) ($gutter-num * 10))
+    );
+
+    transition: ($transition * 0.5) linear;
+  }
+
+  &__item {
+    background-color: theme-color("special_dark");
+    cursor: pointer;
+
+    &:hover {
+      img {
+        transform: scale(1.1);
+        transition: $transition cubic-bezier(0.16, 1.95, 0.8, -1.12);
+        animation: scale ($transition * 3) linear infinite both;
+      }
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: theme-color("light");
+  }
+
+  &__title {
+    @include cssLock(
+      "margin-left",
+      360,
+      1440,
+      (($gutter-num * 2.5) ($gutter-num * 5))
+    );
+
+    display: inline;
+  }
+
+  &:hover {
+    #{$root}__wrapper {
+      color: theme-color("light");
+      text-decoration: none;
+    }
+  }
+}
+
+@keyframes scale {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}

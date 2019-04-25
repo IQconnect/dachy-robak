@@ -1,0 +1,42 @@
+.contact {
+  &__header {
+    @include cssLock(
+      "margin-bottom",
+      360,
+      1440,
+      (($gutter-num * 2.5) ($gutter-num * 5))
+    );
+  }
+
+  &__list {
+    @include cssLock(
+      "margin-bottom",
+      360,
+      1440,
+      (($gutter-num * 2.5) ($gutter-num * 5))
+    );
+
+    list-style: none;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__elem {
+    @include cssLock(
+      "padding",
+      360,
+      1440,
+      (($gutter-num * 1.25) ($gutter-num * 2.5))
+    );
+  }
+
+  a {
+    color: theme-color("light");
+    transition: 0.4s;
+
+    &:hover {
+      opacity: 0.6;
+      text-decoration: none;
+    }
+  }
+}

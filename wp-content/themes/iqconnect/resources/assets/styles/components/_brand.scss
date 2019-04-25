@@ -1,0 +1,24 @@
+.brand {
+  border: 1px solid black;
+
+  &__link {
+    @include cssLock(
+      "padding-top",
+      360,
+      1440,
+      (($gutter-num * 2.5) ($gutter-num * 5))
+    );
+    @include cssLock(
+      "padding-bottom",
+      360,
+      1440,
+      (($gutter-num * 2.5) ($gutter-num * 5))
+    );
+
+    display: block;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}

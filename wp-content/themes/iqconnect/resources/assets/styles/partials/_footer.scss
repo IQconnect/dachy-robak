@@ -1,0 +1,26 @@
+.footer {
+  @include cssLock(
+    "padding-top",
+    360,
+    1440,
+    (($gutter-num * 1.25) ($gutter-num * 2.5))
+  );
+  @include cssLock(
+    "padding-bottom",
+    360,
+    1440,
+    (($gutter-num * 1.25) ($gutter-num * 2.5))
+  );
+
+  background-color: theme-color("special_light");
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__copy {
+    margin: 0;
+  }
+}

@@ -1,0 +1,97 @@
+.block {
+  $root: &;
+
+  position: relative;
+  background-color: theme-color("special_dark");
+  color: theme-color("light");
+  height: 100%;
+
+  &__link {
+    @include cssLock(
+      "padding",
+      360,
+      1440,
+      (($gutter-num * 1.25) ($gutter-num * 2.5))
+    );
+
+    display: block;
+    text-transform: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &__header,
+  &__content {
+    position: relative;
+    z-index: 10;
+    transition: $transition;
+  }
+
+  &__header {
+    @include cssLock(
+      "margin-bottom",
+      360,
+      1440,
+      (($gutter-num * 1.25) ($gutter-num * 2.5))
+    );
+
+    color: theme-color("light");
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    @include cssLock(
+      "margin-right",
+      360,
+      1440,
+      (($gutter-num * 1.25) ($gutter-num * 2.5))
+    );
+    @include cssLock(
+      "height",
+      360,
+      1440,
+      (($gutter-num * 2) ($gutter-num * 4))
+    );
+
+    width: auto;
+    transition: $transition;
+  }
+
+  &__content {
+    color: theme-color("greyy");
+    line-height: 1.3;
+  }
+
+  &__image {
+    @extend %absolute;
+    @extend %image;
+    @extend %overlay;
+    @extend %overlay-special;
+
+    will-change: opacity;
+    opacity: 0;
+    transition: $transition;
+
+    img {
+      @extend %image;
+    }
+  }
+
+  &:hover {
+    #{$root}__header,
+    #{$root}__content {
+      color: theme-color("dark");
+    }
+
+    #{$root}__image {
+      opacity: 1;
+    }
+
+    #{$root}__icon {
+      filter: brightness(0);
+    }
+  }
+}
